@@ -5,7 +5,7 @@ export default class TodoInput extends React.Component {
 
     render() {
         return (
-            <div class="todoInput">
+            <div className="todoInput">
                 <input type="text" placeholder="test"/>
                 <button>Add</button>
             </div>

@@ -5,7 +5,7 @@ import './todoInputSection.scss';
 
 export default class search extends React.Component {
     render() {
-       return <section class="todoInputSection">
+       return <section className="todoInputSection">
             <ToDoHeader />
             <ToDoInput />
         </section>
