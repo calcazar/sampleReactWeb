@@ -5,14 +5,12 @@ import { connect }  from 'react-redux'
 export class TodoResultsRowComponent extends React.Component {
 
     render() {
-        console.log(this.props.results.toString())
         return (
             <tr>
                 <td>
                     <span className="todoText">
                     {this.props.todoItem}
                     <div>
-                    {this.props.results.toString()}
                     </div>
                     </span>
                     <button className="iconContainer">
