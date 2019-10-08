@@ -6,6 +6,9 @@ import './todoResults.scss'
 
 export class TodoResultsComponent extends React.Component {
     render() {
+        if (this.props.resultsList.length === 0) {
+            return null;
+        }
         return (
             <section className="todoResults">
                 <table>

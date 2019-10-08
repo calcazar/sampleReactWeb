@@ -1,6 +1,6 @@
 import React from "react"
-import {connect} from "react-redux"
-import {addTodoItem} from '../../../actions/resultsListAction'
+import { connect } from "react-redux"
+import { addTodoItem } from '../../../actions/resultsListAction'
 import './todoInput.scss'
 
 export class TodoInputComponent extends React.Component {
@@ -18,20 +18,24 @@ export class TodoInputComponent extends React.Component {
         })
     }
     addItem() {
-        this.props.dispatch(addTodoItem(this.state.inputValue))
-        this.setState({
-            inputValue: ""
-        })
+        if (this.state.inputValue === "") {
+            alert("Stop being shameful and add something")
+        } else {
+            this.props.dispatch(addTodoItem(this.state.inputValue))
+            this.setState({
+                inputValue: ""
+            })
+        }
     }
     render() {
         return (
             <div className="todoInput">
-                <input onChange={this.setInputValue} value={this.state.inputValue} type="text" placeholder="test"/>
+                <input onChange={this.setInputValue} value={this.state.inputValue} type="text" placeholder="Add your Todo!" />
                 <button onClick={this.addItem}>Add</button>
             </div>
         )
     }
-    
+
 }
 
 const TodoInput = connect()(TodoInputComponent)

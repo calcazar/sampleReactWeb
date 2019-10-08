@@ -10,7 +10,6 @@ export default function todoApp(state = initialState, action) {
           return {...state, resultsList: newResultsList}
         case "REMOVE_TODO_ITEM":
             newResultsList.splice(action.idx, 1)
-            console.log(newResultsList)
             return {...state, resultsList: newResultsList}
         default:
           return state
