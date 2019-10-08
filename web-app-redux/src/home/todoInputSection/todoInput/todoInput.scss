@@ -1,0 +1,9 @@
+.todoInput {
+    display: flex;
+    justify-content: center;
+    input[type=text]{
+        height: 35px;
+        min-width: 200px;
+        font-size: 2rem;
+    }
+}
