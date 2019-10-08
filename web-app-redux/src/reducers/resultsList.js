@@ -3,11 +3,15 @@ const initialState = {
 }
 
 export default function todoApp(state = initialState, action) {
+    let newResultsList = state.resultsList.slice(0)
     switch (action.type) {
         case "ADD_TODO_ITEM":
-            let newResultsList = state.resultsList.slice(0)
             newResultsList.push(action.todoItem)
           return {...state, resultsList: newResultsList}
+        case "REMOVE_TODO_ITEM":
+            newResultsList.splice(action.idx, 1)
+            console.log(newResultsList)
+            return {...state, resultsList: newResultsList}
         default:
           return state
       }

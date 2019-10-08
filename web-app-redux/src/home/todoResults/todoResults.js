@@ -17,7 +17,7 @@ export class TodoResultsComponent extends React.Component {
                     <tbody>
                         {
                             this.props.resultsList.map((arr, idx)=>{
-                                return(<TodoResultsRow key={`result${idx}`} todoItem={arr}/>)
+                                return(<TodoResultsRow idx={idx} key={`result${idx}`} todoItem={arr}/>)
                             })
                         }
                         

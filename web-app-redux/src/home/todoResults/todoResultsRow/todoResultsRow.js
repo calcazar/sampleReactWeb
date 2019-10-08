@@ -1,8 +1,16 @@
 import React from 'react';
 import MaterialIcon from 'material-icons-react';
-import { connect }  from 'react-redux'
+import { removeTodoItem } from '../../../actions/resultsListAction'
+import {connect} from 'react-redux'
 
-export class TodoResultsRowComponent extends React.Component {
+class TodoResultsRowComponent extends React.Component {
+    constructor() {
+        super();
+        this.removeRow = this.removeRow.bind(this)
+    }
+    removeRow() {
+        this.props.dispatch(removeTodoItem(this.props.idx))
+    }
 
     render() {
         return (
@@ -13,7 +21,7 @@ export class TodoResultsRowComponent extends React.Component {
                     <div>
                     </div>
                     </span>
-                    <button className="iconContainer">
+                    <button onClick={this.removeRow} className="iconContainer">
                         <MaterialIcon icon="delete" />
                     </button>
                 </td>
