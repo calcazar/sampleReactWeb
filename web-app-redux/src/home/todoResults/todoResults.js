@@ -1,5 +1,7 @@
 import React from 'react'
 import './todoResults.scss'
+import MaterialIcon from 'material-icons-react';
+
 export default class TodoResults extends React.Component {
     render() {
         return (
@@ -11,7 +13,12 @@ export default class TodoResults extends React.Component {
                     <tbody>
                         <tr>
                             <td>
+                                <span class="todoText">
                                 hi
+                                </span>
+                                <button class="iconContainer">
+                                    <MaterialIcon icon="delete" />
+                                </button>
                             </td>
                         </tr>
                         
