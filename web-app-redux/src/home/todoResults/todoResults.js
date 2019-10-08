@@ -1,6 +1,7 @@
 import React from 'react'
+import TodoResultsRow from './todoResultsRow/todoResultsRow'
 import './todoResults.scss'
-import MaterialIcon from 'material-icons-react';
+
 
 export default class TodoResults extends React.Component {
     render() {
@@ -11,17 +12,8 @@ export default class TodoResults extends React.Component {
                         <th>List</th>
                     </tr>
                     <tbody>
-                        <tr>
-                            <td>
-                                <span class="todoText">
-                                hi
-                                </span>
-                                <button class="iconContainer">
-                                    <MaterialIcon icon="delete" />
-                                </button>
-                            </td>
-                        </tr>
-                        
+                        <TodoResultsRow todoItem="test" />
+                        <TodoResultsRow todoItem="test" />
                     </tbody>
                 </table>
             </section>
