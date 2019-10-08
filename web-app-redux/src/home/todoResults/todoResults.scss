@@ -1,0 +1,14 @@
+.todoResults {
+ display: flex;
+ justify-content: center;
+ table{
+     margin-top: 8px;
+    border-collapse: collapse;
+    border: 1px solid #ccc; 
+    min-Width: 360px;
+    th {
+        font-size: 25px;
+        border: 1px solid #ccc
+    }
+}
+}
