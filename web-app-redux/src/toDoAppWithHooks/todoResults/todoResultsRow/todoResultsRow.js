@@ -6,7 +6,7 @@ import {connect} from 'react-redux'
 function TodoResultsRowComponent(props) {
 
     function removeRow() {
-        this.props.dispatch(removeTodoItem(props.idx))
+        props.dispatch(removeTodoItem(props.idx))
     }
 
         return (

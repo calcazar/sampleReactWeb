@@ -1,5 +1,5 @@
 import React from 'react';
-import './home.scss';
+import './index.scss';
 import SearchSection from "./todoInputSection/todoInputSection"
 import TodoResults from "./todoResults/todoResults"
 
