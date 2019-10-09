@@ -5,9 +5,9 @@ import './todoInput.scss'
 
 function TodoInputComponent (props) {
 
-    const {inputValue, setInputValue} = useState("");
+    const [inputValue, setInputValue] = useState("");
 
-    function setInputValue(evt) {
+    function setInput(evt) {
         setInputValue(evt.target.value)
     }
 
@@ -15,14 +15,14 @@ function TodoInputComponent (props) {
         if (inputValue === "") {
             alert("Stop being shameful and add something")
         } else {
-            props.dispatch(addTodoItem(this.state.inputValue))
+            props.dispatch(addTodoItem(inputValue))
             setInputValue("")
         }
     }
 
         return (
             <div className="todoInput">
-                <input onChange={setInputValue} value={inputValue} type="text" placeholder="Add your Todo!" />
+                <input onChange={setInput} value={inputValue} type="text" placeholder="Add your Todo!" />
                 <button onClick={addItem}>Add</button>
             </div>
         )

@@ -3,14 +3,14 @@ import { Router } from "@reach/router"
 import ToDoAppWithHooks from "./toDoAppWithHooks"
 import ToDoAppWithRedux from "./toDoAppWithRedux"
 
-let toDoAppWithHooks = () => <ToDoAppWithHooks/>
-let toDoAppWithRedux = () => <ToDoAppWithRedux/>
+let ToDoAppWithHooksRoute = () => <ToDoAppWithHooks/>
+let ToDoAppWithReduxRoute = () => <ToDoAppWithRedux/>
 
-function routes() {
+export default function routes() {
     return(
         <Router>
-            <toDoAppWithHooks path="/" />
-            <toDoAppWithRedux path="withRedux" />
+            <ToDoAppWithHooksRoute path="/" />
+            <ToDoAppWithReduxRoute path="withRedux" />
         </Router>
     )
 }
