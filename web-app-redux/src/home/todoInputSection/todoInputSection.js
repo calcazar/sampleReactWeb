@@ -3,11 +3,11 @@ import ToDoInput from "./todoInput/todoInput";
 import ToDoHeader from "./todoHeader/todoHeader";
 import './todoInputSection.scss';
 
-export default class search extends React.Component {
-    render() {
-       return <section className="todoInputSection">
-            <ToDoHeader />
-            <ToDoInput />
-        </section>
-    }
+export default function search () {
+       return (
+            <section className="todoInputSection">
+                <ToDoHeader />
+                <ToDoInput />
+            </section>
+        )
 }

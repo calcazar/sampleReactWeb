@@ -4,11 +4,11 @@ import TodoResultsRow from './todoResultsRow/todoResultsRow'
 import './todoResults.scss'
 
 
-export class TodoResultsComponent extends React.Component {
-    render() {
-        if (this.props.resultsList.length === 0) {
-            return null;
-        }
+function TodoResultsComponent(props) {
+    if (props.resultsList.length === 0) {
+        return null;
+    }
+     
         return (
             <section className="todoResults">
                 <table>
@@ -19,18 +19,16 @@ export class TodoResultsComponent extends React.Component {
                     </thead>
                     <tbody>
                         {
-                            this.props.resultsList.map((arr, idx)=>{
+                            props.resultsList.map((arr, idx)=>{
                                 return(<TodoResultsRow idx={idx} key={`result${idx}`} todoItem={arr}/>)
                             })
-                        }
-                        
+                        }           
 
                     </tbody>
                 </table>
             </section>
         )
     }
-}
 
 function mapToStateProps(state) {
     return {
