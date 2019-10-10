@@ -3,7 +3,7 @@ import TodoResultsRow from './todoResultsRow/todoResultsRow'
 import './todoResults.scss'
 import {TodoResultsContext} from "../todoResultsContext"
 
-export default function TodoResultsComponent(props) {
+export default function TodoResultsComponent() {
 
     const context = useContext(TodoResultsContext)
 

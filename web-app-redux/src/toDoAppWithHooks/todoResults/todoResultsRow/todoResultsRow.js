@@ -1,11 +1,11 @@
 import React, {useContext} from 'react';
 import MaterialIcon from 'material-icons-react';
-import {connect} from 'react-redux'
 import {TodoResultsContext} from "../../todoResultsContext"
 
-function TodoResultsRowComponent(props) {
+export default function TodoResultsRowComponent(props) {
 
     const context = useContext(TodoResultsContext)
+    
     function removeRow() {
         context.removeResults(props.idx)
     }
@@ -23,15 +23,3 @@ function TodoResultsRowComponent(props) {
             </tr>
         )
     }
-
-const mapStateToProps = state => {
-    return {
-      results: state.resultsList.resultsList
-    }
-  }
-
-const TodoResultsRow = connect(
-    mapStateToProps
-)(TodoResultsRowComponent)
-
-export default TodoResultsRow

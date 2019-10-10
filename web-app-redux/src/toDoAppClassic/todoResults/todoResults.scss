@@ -1,0 +1,56 @@
+.todoResults {
+ display: flex;
+ justify-content: center;
+ flex-flow: wrap;
+
+ hr {
+     width: 100%;
+    flex-basis: 100%; 
+    height: 0; 
+    margin: 0; 
+    border: 0
+ }
+
+ img {
+     margin-top: 18px;
+     align-self: center;
+     flex-wrap: wrap;
+     width: 200px
+ }
+ table{
+    margin-top: 8px;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    border-bottom: none; 
+    min-Width: 360px;
+    th {
+        font-size: 25px;
+        border: 1px solid #ccc
+    }
+    tbody {
+        td {
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid #ccc;
+            border-top: none;
+            .todoText{
+                align-self: center
+            }
+            button {
+                align-self: center;
+                justify-content: flex-end;
+                border: none;
+                background-color: none;
+                margin: 0;
+                padding: 0;
+                padding-top: 6px
+                
+            }
+    }
+
+
+    }
+
+
+}
+}
