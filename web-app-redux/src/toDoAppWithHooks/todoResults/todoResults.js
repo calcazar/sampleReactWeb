@@ -1,15 +1,21 @@
-import React from 'react'
-import {connect} from 'react-redux'
+import React, {useContext, useEffect} from 'react'
 import TodoResultsRow from './todoResultsRow/todoResultsRow'
 import './todoResults.scss'
+import {TodoResultsContext} from "../todoResultsContext"
 
+export default function TodoResultsComponent(props) {
 
-function TodoResultsComponent(props) {
-    if (props.resultsList.length === 0) {
+    const context = useContext(TodoResultsContext)
+
+    useEffect(()=>{
+        context.initResults();
+    },[])
+
+    if (context.results.length === 0) {
         return null;
     }
      
-        return (
+    return (
             <section className="todoResults">
                 <table>
                     <thead>
@@ -19,7 +25,7 @@ function TodoResultsComponent(props) {
                     </thead>
                     <tbody>
                         {
-                            props.resultsList.map((arr, idx)=>{
+                            context.results.map((arr, idx)=>{
                                 return(<TodoResultsRow idx={idx} key={`result${idx}`} todoItem={arr}/>)
                             })
                         }           
@@ -27,15 +33,5 @@ function TodoResultsComponent(props) {
                     </tbody>
                 </table>
             </section>
-        )
-    }
-
-function mapToStateProps(state) {
-    return {
-        resultsList: state.resultsList.resultsList
-    }
+    )
 }
-
-const TodoResults = connect(mapToStateProps)(TodoResultsComponent)
-
-export default TodoResults

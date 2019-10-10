@@ -6,7 +6,7 @@ export default function TodoHeader () {
         return (
             <div className="todoHeader">
                 <header>
-                    <h1>To Do</h1>
+                    <h1>To Do (With Hooks)</h1>
                 </header>
             </div>
         )

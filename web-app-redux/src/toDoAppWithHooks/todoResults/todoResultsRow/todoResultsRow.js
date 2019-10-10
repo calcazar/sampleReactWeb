@@ -1,12 +1,13 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import MaterialIcon from 'material-icons-react';
-import { removeTodoItem } from '../../../actions/resultsListAction'
 import {connect} from 'react-redux'
+import {TodoResultsContext} from "../../todoResultsContext"
 
 function TodoResultsRowComponent(props) {
 
+    const context = useContext(TodoResultsContext)
     function removeRow() {
-        props.dispatch(removeTodoItem(props.idx))
+        context.removeResults(props.idx)
     }
 
         return (

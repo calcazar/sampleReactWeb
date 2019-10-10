@@ -1,12 +1,11 @@
-import React, {useState} from "react"
-import { connect } from "react-redux"
-import { addTodoItem } from '../../../actions/resultsListAction'
+import React, {useState, useContext} from "react"
 import './todoInput.scss'
+import {TodoResultsContext} from "../../todoResultsContext"
 
-function TodoInputComponent (props) {
+export default function TodoInputComponent (props) {
 
     const [inputValue, setInputValue] = useState("");
-
+    const context = useContext(TodoResultsContext)
     function setInput(evt) {
         setInputValue(evt.target.value)
     }
@@ -15,19 +14,17 @@ function TodoInputComponent (props) {
         if (inputValue === "") {
             alert("Stop being shameful and add something")
         } else {
-            props.dispatch(addTodoItem(inputValue))
+            context.addToResults(inputValue)
             setInputValue("")
         }
     }
 
         return (
-            <div className="todoInput">
-                <input onChange={setInput} value={inputValue} type="text" placeholder="Add your Todo!" />
-                <button onClick={addItem}>Add</button>
-            </div>
-        )
+                    <div className="todoInput">
+                        <input onChange={setInput} value={inputValue} type="text" placeholder="Add your Todo!" />
+                        <button onClick={addItem}>Add</button>
+                    </div>
+                )
+        
 }
 
-const TodoInput = connect()(TodoInputComponent)
-
-export default TodoInput 
