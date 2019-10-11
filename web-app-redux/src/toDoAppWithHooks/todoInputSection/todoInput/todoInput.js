@@ -14,7 +14,7 @@ export default function TodoInputComponent (props) {
         if (inputValue === "") {
             alert("Stop being shameful and add something")
         } else {
-            context.addToResults(inputValue)
+            context.addToResults({text: inputValue, read: false})
             setInputValue("")
         }
     }

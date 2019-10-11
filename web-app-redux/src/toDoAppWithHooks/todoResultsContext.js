@@ -29,6 +29,12 @@ export function TodoResultsProvider (props) {
                 newResultSet.splice(index, 1)
                 setResults(newResultSet)
                 saveResultsToLocalStorage(JSON.stringify(newResultSet))
+            },
+            readItemToggle: (idx, read)=>{
+                const newResultSet = results.slice(0); 
+                newResultSet[idx].read = read
+                setResults(newResultSet)
+                saveResultsToLocalStorage(JSON.stringify(newResultSet))
             }
         }}>
             {props.children}
