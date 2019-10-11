@@ -11,7 +11,6 @@ export default function TodoResultsRowComponent(props) {
         context.removeResults(props.idx)
     }
 
-
     function toggleCheckBox() {
        context.readItemToggle(props.idx, !props.read)
     }

@@ -19,7 +19,12 @@ export default class TodoResultsComponent extends React.Component {
                     <tbody>
                         {
                             this.props.results.map((arr, idx)=>{
-                                return(<TodoResultsRow idx={idx} key={`result${idx}`} removeResults={this.props.removeResults} todoItem={arr}/>)
+                                return(
+                                
+                                <TodoResultsRow idx={idx} key={`result${idx}`} removeResults={this.props.removeResults}  
+                                    todoItem={arr.text} readItemToggle={this.props.readItemToggle}
+                                    read={arr.read}/>
+                                )
                             })
                         }           
 
