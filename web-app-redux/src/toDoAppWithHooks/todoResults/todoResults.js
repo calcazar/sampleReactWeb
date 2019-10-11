@@ -1,6 +1,6 @@
 import React, {useContext, useEffect} from 'react'
 import TodoResultsRow from './todoResultsRow/todoResultsRow'
-import './todoResults.scss'
+import {todoResults} from './todoResults.module.scss'
 import {TodoResultsContext} from "../todoResultsContext"
 
 export default function TodoResultsComponent() {
@@ -16,7 +16,7 @@ export default function TodoResultsComponent() {
     }
      
     return (
-            <section className="todoResults">
+            <section className={todoResults}>
                 <table>
                     <thead>
                     <tr>

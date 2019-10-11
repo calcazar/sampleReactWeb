@@ -1,6 +1,6 @@
 import React from 'react'
 import TodoResultsRow from './todoResultsRow/todoResultsRow'
-import './todoResults.scss'
+import {todoResults} from './todoResults.module.scss'
 
 export default class TodoResultsComponent extends React.Component {
     render() {
@@ -9,7 +9,7 @@ export default class TodoResultsComponent extends React.Component {
         }
 
         return (
-            <section className="todoResults">
+            <section className={todoResults}>
                 <table>
                     <thead>
                     <tr>

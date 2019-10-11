@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.scss';
+import {app} from './index.module.scss';
 import SearchSection from "./todoInputSection/todoInputSection"
 import TodoResults from "./todoResults/todoResults"
 
@@ -38,7 +38,7 @@ removeResults(index){
 
   render(){
     return (
-      <div className="app">
+      <div className={app}>
           <SearchSection addToResults={this.addToResults}/>
           <TodoResults results={this.state.results} removeResults={this.removeResults}/>
       </div>

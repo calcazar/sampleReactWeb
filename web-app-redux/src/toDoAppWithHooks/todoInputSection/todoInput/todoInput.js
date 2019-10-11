@@ -1,5 +1,5 @@
 import React, {useState, useContext} from "react"
-import './todoInput.scss'
+import {todoInput} from './todoInput.module.scss'
 import {TodoResultsContext} from "../../todoResultsContext"
 
 export default function TodoInputComponent (props) {
@@ -20,7 +20,7 @@ export default function TodoInputComponent (props) {
     }
 
         return (
-                    <div className="todoInput">
+                    <div className={todoInput}>
                         <input onChange={setInput} value={inputValue} type="text" placeholder="Add your Todo!" />
                         <button onClick={addItem}>Add</button>
                     </div>

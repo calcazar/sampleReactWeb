@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import TodoResultsRow from './todoResultsRow/todoResultsRow'
-import './todoResults.scss'
+import {todoResults} from './todoResults.module.scss'
 
 
 function TodoResultsComponent(props) {
@@ -10,7 +10,7 @@ function TodoResultsComponent(props) {
     }
      
         return (
-            <section className="todoResults">
+            <section className={todoResults}>
                 <table>
                     <thead>
                     <tr>

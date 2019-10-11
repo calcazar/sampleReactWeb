@@ -1,7 +1,7 @@
 import React from "react"
 import { connect } from "react-redux"
 import { addTodoItem } from '../../../actions/resultsListAction'
-import './todoInput.scss'
+import {todoInput} from './todoInput.module.scss'
 
 export class TodoInputComponent extends React.Component {
     constructor() {
@@ -29,7 +29,7 @@ export class TodoInputComponent extends React.Component {
     }
     render() {
         return (
-            <div className="todoInput">
+            <div className={todoInput}>
                 <input onChange={this.setInputValue} value={this.state.inputValue} type="text" placeholder="Add your Todo!" />
                 <button onClick={this.addItem}>Add</button>
             </div>
