@@ -1,17 +1,20 @@
 .TodoResultRow{
         button {
-            border: 1px solid red;
             height: 50px;
             min-width: 50px;
             align-self: center;
             justify-content: flex-end;
-            background-color: none;
+            background-color: transparent;
+            border: none;
             margin: 0;
             padding: 0;
             margin-right: 10px;
             padding-top: 0
         }
         .todoText{
-            align-self: center
+            align-self: center;
+        }
+        .strikeThrough {
+            text-decoration-line: line-through
         }
 }

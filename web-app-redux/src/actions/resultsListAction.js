@@ -8,3 +8,9 @@ export function removeTodoItem(idx) {
         type: "REMOVE_TODO_ITEM", idx
     }
 }
+
+export function readItemToggle(idx, read) {
+    return {
+        type: "READ_TOGGLE_TODO_ITEM", read, idx
+    }
+}

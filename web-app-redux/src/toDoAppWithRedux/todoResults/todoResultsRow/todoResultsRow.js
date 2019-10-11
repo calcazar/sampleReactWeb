@@ -1,29 +1,28 @@
-import React, {useState} from 'react';
+import React from 'react';
 import MaterialIcon from 'material-icons-react';
-import { removeTodoItem } from '../../../actions/resultsListAction'
+import { removeTodoItem, readItemToggle } from '../../../actions/resultsListAction'
 import {connect} from 'react-redux'
-import {TodoResultRow} from "./todoResultsRow.module.scss"
+import {TodoResultRow, strikeThrough} from "./todoResultsRow.module.scss"
 
 
 function TodoResultsRowComponent(props) {
-    const [checkboxToggle, setCheckboxToggle] = useState(false);
 
     function removeRow() {
         props.dispatch(removeTodoItem(props.idx))
     }
 
     function toggleCheckBox() {
-        setCheckboxToggle(!checkboxToggle)
+        props.dispatch(readItemToggle(props.idx, !props.read))
     }
 
         return (
             <tr className={TodoResultRow}>
                 <td>
                     <button onClick={toggleCheckBox}>      
-                        {checkboxToggle && <MaterialIcon size="38" icon="check_box" />}
-                        {!checkboxToggle && <MaterialIcon size="38" icon="check_box_outline_blank" />}
+                        {props.read && <MaterialIcon size="38" icon="check_box" />}
+                        {!props.read && <MaterialIcon size="38" icon="check_box_outline_blank" />}
                     </button>
-                    <span className="todoText">
+                    <span className={`todoText ${props.read ? strikeThrough : "" }`}>
                         {props.todoItem}
                     </span>
                     <button onClick={removeRow} className="iconContainer">

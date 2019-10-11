@@ -20,7 +20,7 @@ function TodoResultsComponent(props) {
                     <tbody>
                         {
                             props.resultsList.map((arr, idx)=>{
-                                return(<TodoResultsRow idx={idx} key={`result${idx}`} todoItem={arr}/>)
+                                return(<TodoResultsRow idx={idx} key={`result${idx}`} todoItem={arr.text} read={arr.read}/>)
                             })
                         }           
 
